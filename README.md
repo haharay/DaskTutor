@@ -1,32 +1,19 @@
 # Dask Tutorial
 
-This tutorial was last given at SciPy 2020 which was a virtual conference.
+本教程最后一次是在SciPy 2020上讲的，这是一次虚拟会议。
 [A video of the SciPy 2020 tutorial is available online](https://www.youtube.com/watch?v=EybGGLbLipI).
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dask/dask-tutorial/master?urlpath=lab)
 [![Build Status](https://github.com/dask/dask-tutorial/workflows/CI/badge.svg)](https://github.com/dask/dask-tutorial/actions?query=workflow%3ACI)
 
-Dask provides multi-core execution on larger-than-memory datasets.
+Dask在大于内存的数据集上提供多核执行。
 
-We can think of dask at a high and a low level
+我们可以从高、低两个层次的角度来看dask:
 
-*  **High level collections:**  Dask provides high-level Array, Bag, and DataFrame
-   collections that mimic NumPy, lists, and Pandas but can operate in parallel on
-   datasets that don't fit into main memory.  Dask's high-level collections are
-   alternatives to NumPy and Pandas for large datasets.
-*  **Low Level schedulers:** Dask provides dynamic task schedulers that
-   execute task graphs in parallel.  These execution engines power the
-   high-level collections mentioned above but can also power custom,
-   user-defined workloads.  These schedulers are low-latency (around 1ms) and
-   work hard to run computations in a small memory footprint.  Dask's
-   schedulers are an alternative to direct use of `threading` or
-   `multiprocessing` libraries in complex cases or other task scheduling
-   systems like `Luigi` or `IPython parallel`.
+* **高级集合：** Dask提供高级Array、Bag、DataFrame、集合，模仿NumPy、list和Pandas，但可以并行运行在的数据集，不适合放在主内存中。 Dask 的高级集合是   NumPy和Pandas的替代品，用于大型数据集。
+* **低级调度器：** Dask提供动态任务调度器，可实现以下功能 并行执行任务图。 这些执行引擎为   上面提到的高级集合，但也可以为自定义提供动力。  用户定义的工作负载。 这些调度器是低延迟（约1ms）和   努力在较小的内存占用范围内运行计算。 Dask的   调度器是直接使用 "线程 "或 "线程 "的替代方案。  复杂情况下的 "多处理 "库或其他任务调度。 系统，如 "Luigi "或 "IPython并行"。
 
-Different users operate at different levels but it is useful to understand
-both.  This tutorial will interleave between high-level use of `dask.array` and
-`dask.dataframe` (even sections) and low-level use of dask graphs and
-schedulers (odd sections.)
+不同的用户在不同的层次上进行操作，但了解以下内容是有用的 都有。 本教程将在高级使用`dask.array`和 `dask.dataframe`(甚至是部分)和低级别的dask图形和使用。调度员（奇数节。
 
 ## Prepare
 
@@ -34,9 +21,9 @@ schedulers (odd sections.)
 
     git clone http://github.com/dask/dask-tutorial
 
-and then install necessary packages.
-There are three different ways to achieve this, pick the one that best suits you, and ***only pick one option***.
-They are, in order of preference:
+然后安装必要的软件包。
+有三种不同的方法可以实现，选择最适合你的方法，***只选择一个选项***。
+它们依次是
 
 #### 2a) Create a conda environment (preferred)
 
@@ -115,8 +102,7 @@ with a functional programming style and to clean messy data.
 3. [Array](03_array.ipynb) - blocked numpy-like functionality with a collection of
 numpy arrays spread across your cluster.
 
-7. [Dataframe](04_dataframe.ipynb) - parallelized operations on many pandas dataframes
-spread across your cluster.
+7. [Dataframe](04_dataframe.ipynb) - 集群上多个pandas数据框上的并行化操作。
 
 5. [Distributed](05_distributed.ipynb) - Dask's scheduler for clusters, with details of
 how to view the UI.
